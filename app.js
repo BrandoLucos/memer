@@ -8,7 +8,13 @@ var mongoose = require('mongoose');
 var methodOverride = require('method-override');
 var routes = require('./routes/index');
 var users = require('./routes/users');
+var memeRouter = require('./routes/memes');
+var passport = require('passport');
+var session = require('express-session');
+var flash = require('connect-flash');
+mongoose.Promise = require('bluebird');
 
+app.use('/memes', memeRouter);
 var app = express();
 mongoose.connect('mongodb://localhost/express-meme');
 
@@ -26,6 +32,22 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+
+app.use(session({ secret: 'Memes Rock',
+                  resave: true,
+                  saveUninitialized: true }));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(flash());
+// This middleware will allow us to use the currentUser in our views and routes.
+app.use(function (req, res, next) {
+  global.currentUser = req.user;
+  next();
+});
+
+require('./config/passport/passport')(passport);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
