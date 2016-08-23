@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var bcrypt   = require('bcrypt-nodejs');
-var meme = require('./meme');
+var meme = require('./memes');
 
 var UserSchema = new mongoose.Schema({
   local : {
@@ -8,6 +8,9 @@ var UserSchema = new mongoose.Schema({
     password : String
   },
   memes : [meme.schema]
+  // firstName: String,
+  // lastName: String,
+  // MemeSchema : [{ type :mongoose.Schema.Types.ObjectId, ref : 'Meme'}]
 });
 
 UserSchema.methods.encrypt = function(password) {

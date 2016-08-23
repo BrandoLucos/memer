@@ -1,11 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var User = require('../models/user');
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', message: req.flash() });  // add the message
+  res.render('index', { title: 'Memer', message: req.flash() });  // add the message
 });
 
 // GET /signup
@@ -16,7 +17,7 @@ router.get('/signup', function(req, res, next) {
 // POST /signup
 router.post('/signup', function(req, res, next) {
   var signUpStrategy = passport.authenticate('local-signup', {
-    successRedirect : '/todos',
+    successRedirect : '/memes',
     failureRedirect : '/signup',
     failureFlash : true
   });
@@ -32,7 +33,7 @@ router.get('/login', function(req, res, next) {
 // POST /login
 router.post('/login', function(req, res, next) {
   var loginProperty = passport.authenticate('local-login', {
-    successRedirect : '/todos',
+    successRedirect : '/memes',
     failureRedirect : '/login',
     failureFlash : true
   });

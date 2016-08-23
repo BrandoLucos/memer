@@ -2,14 +2,15 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="#">
-        <span class="glyphicon glyphicon glyphicon-tree-deciduous"></span>Express Memes
+        <span class="glyphicon glyphicon glyphicon-leaf"></span>Memer
       </a>
     </div>
     <ul class="nav navbar-nav navbar-left">
+       <% if (currentUser) { %>
       <li><a href="/">Home</a></li>
-      <% if (currentUser) { %>
-        <li><a href="/memes">memes</a></li>
-      <% } %>
+      <li><a href="/memes/classic">Classic</a></li>
+      <li><a href="/memes/create">Create</a></li>
+     <% } %>
     </ul>
     <ul class="nav navbar-nav navbar-right">
       <% if (currentUser) { %>
@@ -21,8 +22,7 @@
       <% } %>
     </ul>
   </div>
-</nav>
-<div class="flash">
+  <div class="flash">
   <% if (typeof message !== 'undefined') { %>
     <% if (typeof message.error !== 'undefined' && message.error.length > 0) { %>
       <div class="bg-danger"><%= message.error %></div>
@@ -35,3 +35,5 @@
     <% } %>
   <% } %>
 </div>
+</nav>
+

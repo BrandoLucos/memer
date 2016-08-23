@@ -1,9 +1,13 @@
 var mongoose = require('mongoose');
+// mongoose.connect('mongodb)
 
 var MemeSchema = new mongoose.Schema({
+  // user: { type: mongoose.Schema.Types.ObjectId, ref : 'User'},
   title: { type: String,  required: true },
+  top: { type: String,  required: true },
+  bottom: { type: String,  required: true },
   image: { type: String,  required: true },
-  genre: { type: String,  required: false },
+  tags:  [ { type: String } ],
   },
   { timestamps: true }  // createdAt, updatedAt
 );

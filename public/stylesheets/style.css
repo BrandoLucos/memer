@@ -1,12 +1,64 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background: #5b5b5b;
+  font: 14px "Comic Sans", Helvetica, Arial, sans-serif;
+  background: url("/images/background2.jpeg");
+  background-size: 100% ;
 }
 
 a {
   color: #00B7FF;
 }
-.todo-form {
+.meme-form {
   max-width: 400px;
 }
+/*.sidebar {
+  position: absolute;
+  max-width: 150px;
+  background: #5d5d5d;
+  padding: 35px;
+  border-radius: 10px;
+}*/
+.container {
+  background: #000000;
+  padding: 35px;
+  height:100%;
+  border-radius: 10px;
+}
+
+.meme-image {
+  margin: 10px;
+}
+
+/*
+<a class="btn btn-default" href="#" role="button">Link</a>
+<button class="btn btn-default" type="submit">Button</button>
+<input class="btn btn-default" type="button" value="Input">
+<input class="btn btn-default" type="submit" value="Submit">
+
+
+
+<!-- Standard button -->
+<button type="button" class="btn btn-default">Default</button>
+
+<!-- Provides extra visual weight and identifies the primary action in a set of buttons -->
+<button type="button" class="btn btn-primary">Primary</button>
+
+<!-- Indicates a successful or positive action -->
+<button type="button" class="btn btn-success">Success</button>
+
+<!-- Contextual button for informational alert messages -->
+<button type="button" class="btn btn-info">Info</button>
+
+<!-- Indicates caution should be taken with this action -->
+<button type="button" class="btn btn-warning">Warning</button>
+
+<!-- Indicates a dangerous or potentially negative action -->
+<button type="button" class="btn btn-danger">Danger</button>
+
+<!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
+<button type="button" class="btn btn-link">Link</button>
+
+<img src="..." alt="..." class="img-rounded">
+
+
+*/

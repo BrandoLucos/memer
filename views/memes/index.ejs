@@ -14,11 +14,13 @@
       <h3>Memes</h3>
       <% memes.forEach(function(meme) { %>
         <dl class="dl-horizontal">
-          <dt>Title</dt><dd><%= meme.title %></dd>
-          <dt>Genre</dt><dd><%= meme.image %></dd>
-          <dt>Year</dt><dd><%= meme.genre %></dd>
+          <h3><span>title</span><%= meme.title %></h3>
+          <dt>genre</dt><dd><%= meme.genre %></dd>
+          <dt>tags</dt><dd><%= meme.tags %></dd>
+          <img src="<%= meme.image %>" width="200" alt="Responsive image" class="meme-image img-rounded">
         </dl>
-      <% }) %>
+      <% }); %>
+
     </div>
   </main>
 
@@ -27,3 +29,5 @@
   </footer>
 </body>
 </html>
+
+
