@@ -24,10 +24,10 @@ router.get('/create', authenticate, function(req, res, next) {
   var memes = currentUser.memes;
   res.render('memes/create', { memes: memes, message: req.flash() });
 });
-router.get('/classic', authenticate, function(req, res, next) {
+router.get('/browse', authenticate, function(req, res, next) {
   // get all the memes and render the index view
   var memes = currentUser.memes;
-  res.render('memes/classic', { memes: memes, message: req.flash() });
+  res.render('memes/browse', { memes: memes, message: req.flash() });
 });
 
 // INDEX

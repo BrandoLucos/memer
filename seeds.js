@@ -40,15 +40,15 @@ User.remove({})
 })
 .then(function(joe) {
   console.log('creating some new memes...');
-  var youDontSay   = new Meme({ title: 'You Dont Say',  image: 'http://www.bloodygoodhorror.com/bgh/files/reviews/caps/vampires-kiss.jpg',   genre: 'Sarcastic', tags:'#'});
-  var foreverAlone = new Meme({ title: 'Forever Alone', image: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS5H4vkXOU09xyJRWOZXeTtwYsFFTXk56-RQFZU0vID20Tf6Vac', genre: 'Awkward', tags:'#'});
-  var badLuckBrian = new Meme({ title: 'Bad Luck Brian',  image: 'https://s-media-cache-ak0.pinimg.com/236x/cb/41/ed/cb41ed5037bbf2bfce84cd33cf5ccb41.jpg', genre: 'Awkward', tags:'#' });
-  var whyUNo       = new Meme({ title: 'Why U No', image:'', genre:'', tags:''});
-  // var ""       = new Meme({ title: '', image:'', genre:'', tags:''});
-  // var ""       = new Meme({ title: '', image:'', genre:'', tags:''});
-  // var ""       = new Meme({ title: '', image:'', genre:'', tags:''});
-  // var ""       = new Meme({ title: '', image:'', genre:'', tags:''});
-  // var ""       = new Meme({ title: '', image:'', genre:'', tags:''});
+  var youDontSay   = new Meme({ title: 'You Dont Say',  image: 'https://ip.bitcointalk.org/?u=https%3A%2F%2Fdl.dropboxusercontent.com%2Fu%2F96353231%2Fmeme%2FreadImage.jpg&t=566&c=jf851N_C5c2zmQ', tags:'sarcastic'});
+  var foreverAlone = new Meme({ title: 'Forever Alone', image: 'https://imgflip.com/s/meme/Forever-Alone.jpg', tags:'awkward'});
+  var badLuckBrian = new Meme({ title: 'Bad Luck Brian',  image: 'http://www.comicsandmemes.com/wp-content/uploads/2013/04/bad-luck-brian.png', tags:'awkward' });
+  var whyUNo       = new Meme({ title: 'Why U No', image:'http://www.instructables.com/files/deriv/F1M/VUND/GZKG37BW/F1MVUNDGZKG37BW.LARGE.jpg', genre:'', tags:''});
+  var scumbagSteve = new Meme({ title: 'Scumbag Steve', image:'http://i0.kym-cdn.com/photos/images/newsfeed/000/093/953/c5b.jpg', tags:'douche'});
+  var noFace       = new Meme({ title: '', image:'', tags:''});
+  var      = new Meme({ title: '', image:'', tags:''});
+  var      = new Meme({ title: '', image:'', tags:''});
+  var      = new Meme({ title: '', image:'', tags:''});
 
   [youDontSay, foreverAlone, badLuckBrian].forEach(function(meme) {
     joe.memes.push(meme);
