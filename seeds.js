@@ -68,16 +68,22 @@ User.remove({})
   var condescendingWonka  = new Meme({ title: 'Condescending Wonka', image:'https://imgflip.com/s/meme/Creepy-Condescending-Wonka.jpg', tags: 'condescendingWonka'});
 
 
-
-
-[ youDontSay, foreverAlone, badLuckBrian, whyUNo, scumbagSteve, noFace, philosoraptor, oneCannotSimply,
+var allMemes = [ youDontSay, foreverAlone, badLuckBrian, whyUNo, scumbagSteve, noFace, philosoraptor, oneCannotSimply,
 overlyManlyMan, babyGodfather, successKid, josephDucreux, futuramaFry, faceYouMake, yoDawgHeardYou, batmanSlap,
 africanDancingBaby, unhelpfulTeacher, mindBlown, drinkMyOwnPiss, starTrekWtf, thatEscalatedQuickly, youMeanToTellMe,
-grumpyCat, jackieChanWtf, condescendingWonka
-].forEach(function(meme) {
-  joe.memes.push(meme);
-});
+grumpyCat, jackieChanWtf, condescendingWonka]
 
+// allMemes.forEach(function(meme) {
+//   joe.memes.push(meme);
+// });
+  // return joe.save();
+
+  return [ Meme.create(allMemes), User.findOne({ 'local.email': 'joe@hacker.com' }) ];
+})
+.spread(function(savedMemes, joe) {
+  console.log('Just saved %s memes', savedMemes.length);
+  joe.memes.push(savedMemes[0]);
+  joe.memes.push(savedMemes[2]);
   return joe.save();
 })
 .then(function(joe) {

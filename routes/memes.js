@@ -18,10 +18,12 @@ function authenticate(req, res, next) {
     next();
   }
 }
-router.get('/modify/:id', authenticate, function (req, res, next) {
-  Meme.find({"tags": req.params.id})
+router.get('/modify/:tag', authenticate, function (req, res, next) {
+  console.log('modify:', req.params.tag);
+  Meme.findOne({"tags": req.params.tag})
   .then(function (meme) {
-  res.render ('memes/index', {meme : meme});
+    console.log('meme:', meme);
+    res.render ('memes/show', {meme : meme});
    }, function(err) {
     return next(err)
   });
@@ -34,8 +36,12 @@ router.get('/create', authenticate, function(req, res, next) {
 });
 router.get('/browse', authenticate, function(req, res, next) {
   // get all the memes and render the index view
-  var memes = currentUser.memes;
-  res.render('memes/browse', { memes: memes, message: req.flash() });
+  Meme.find({})
+  .then(function(memes) {
+    res.render('memes/browse', { memes: memes, message: req.flash() });
+  }, function(err) {
+    return next(err);
+  });
 });
 
 // INDEX
