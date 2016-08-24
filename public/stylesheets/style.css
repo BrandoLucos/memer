@@ -8,11 +8,23 @@ body {
   display: flex;
   align-items: flex-end;
 }
+h3 {
+  color: white;
+ position: absolute;
+}
 
 a {
-  color: #00B7FF;
+  /*color: #00B7FF;*/
 }
 .container {
+  background: #000000;
+  padding: 35px;
+  height:100%;
+  border-radius: 10px;
+}
+.container2 {
+  display:flex;
+  flex-direction: column;
   background: #000000;
   padding: 35px;
   height:100%;
@@ -22,13 +34,43 @@ a {
 .meme-image {
   margin: 35px;
 }
-#top, #bottom {
-  width:200px;
-  height: 50px;
-  font-family: impact;
-  font-size:14px;
-  font-color: black;
+#memepic {
+
 }
+#meme {
+  position: relative;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#top, #bottom {
+  position: absolute;
+  text-align: center;
+  width: 80%;
+  height: 100%;
+  font-family: impact;
+  font-size: 40px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#top {
+
+
+}
+#bottom {
+  display:flex;
+  align-items:flex-end;
+
+}
+
+
+
+
+
+
+
+
 /*
 <a class="btn btn-default" href="#" role="button">Link</a>
 <button class="btn btn-default" type="submit">Button</button>
@@ -61,4 +103,4 @@ a {
 <img src="..." alt="..." class="img-rounded">
 
 
-*/
+

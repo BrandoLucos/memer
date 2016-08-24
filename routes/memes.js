@@ -23,17 +23,33 @@ router.get('/modify/:tag', authenticate, function (req, res, next) {
   Meme.findOne({"tags": req.params.tag})
   .then(function (meme) {
     console.log('meme:', meme);
-    res.render ('memes/show', {meme : meme});
+    res.render ('memes/edit', {meme : meme});
    }, function(err) {
     return next(err)
   });
 });
 
-router.get('/create', authenticate, function(req, res, next) {
-  // get all the memes and render the index view
-  var memes = currentUser.memes;
-  res.render('memes/create', { memes: memes, message: req.flash() });
+// CREATE
+router.post('/create', authenticate, function(req, res, next) {
+  console.log('memes create');
+
+  var newMeme = new Meme({
+    title: req.body.title,
+    top: req.body.top,
+    bottom: req.body.bottom,
+    image: req.body.image
+  });
+  newMeme.tags.push(req.body.tag);
+  console.log('saving new meme:', newMeme);
+  currentUser.memes.push(newMeme);
+  currentUser.save()
+  .then(function(saved) {
+    res.redirect('/memes');
+  }, function(err) {
+    return next(err);
+  });
 });
+
 router.get('/browse', authenticate, function(req, res, next) {
   // get all the memes and render the index view
   Meme.find({})
@@ -67,22 +83,6 @@ router.get('/:id', authenticate, function(req, res, next) {
   res.render('memes/show', { meme: meme, message: req.flash() } );
 });
 
-// CREATE
-router.post('/', authenticate, function(req, res, next) {
-  var meme = {
-    title: req.body.title,
-    completed: req.body.completed ? true : false
-  };
-  // Since a user's memes are an embedded document, we just need to push a new
-  // meme to the user's list of memes and save the user.
-  currentUser.memes.push(meme);
-  currentUser.save()
-  .then(function() {
-    res.redirect('/memes');
-  }, function(err) {
-    return next(err);
-  });
-});
 
 // EDIT
 router.get('/:id/edit', authenticate, function(req, res, next) {

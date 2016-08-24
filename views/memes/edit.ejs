@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+
+<body class="container-fluid">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div>
+      <h3 style='background:white'>Customize Your Meme</h3>
+
+      <form class="form-horizontal" method="POST" action="/memes/create">
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Title</label>
+          <div class="col-sm-10">
+            <input type="text" name="title" value="<%= meme.title %>">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Tag</label>
+          <div class="col-sm-10">
+            <input type="text" name="tag" value="<%= meme.tags[0] %>">
+          </div>
+        </div>
+
+        <div class="form-group hidden">
+          <label class="col-sm-2 control-label">Image</label>
+          <div class="col-sm-10">
+            <input type="text" name="image" value="<%= meme.image %>">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Top</label>
+          <div class="col-sm-10">
+            <input type="text" name="top" value="<%= meme.top %>">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label">Bottom</label>
+          <div class="col-sm-10">
+            <input type="text" name="bottom" value="<%= meme.bottom %>">
+          </div>
+        </div>
+
+        <input type="submit" value="Submit">
+      </form>
+
+      <img src= "<%= meme.image %>">
+    </div>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>
+
+
