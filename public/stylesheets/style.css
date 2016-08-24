@@ -4,6 +4,10 @@ body {
   background: url("/images/background2.jpeg");
   background-size: 100% ;
 }
+.btn btn-primary {
+  display: flex;
+
+}
 
 a {
   color: #00B7FF;
