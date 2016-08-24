@@ -55,7 +55,7 @@ User.remove({})
   var futuramaFry         = new Meme({ title: 'Futurama Fry', image:'https://imgflip.com/s/meme/Futurama-Fry.jpg', tags:'futurama fry'});
   var faceYouMake         = new Meme({ title: 'Face You Make', image:'https://s-media-cache-ak0.pinimg.com/236x/22/39/92/223992a371aecc5186878cda234a0b18.jpg', tags:'face you make'});
   var yoDawgHeardYou      = new Meme({ title: 'Yo Dawg Heard You', image:'https://imgflip.com/s/meme/Yo-Dawg-Heard-You.jpg', tags:'yo dawg heard you'});
-  var batmanSlapMeme      = new Meme({ title: 'Batman Slap Meme', image:'http://www.fotoefectos.com/efectos/examples/2/escena-fotomontaje-batman-robin-tortazo-meme.jpg', tags:'batman slap meme'});
+  var batmanSlap          = new Meme({ title: 'Batman Slap', image:'http://www.fotoefectos.com/efectos/examples/2/escena-fotomontaje-batman-robin-tortazo-meme.jpg', tags:'batman slap'});
   var africanDancingBaby  = new Meme({ title: 'African Danicng Baby', image:'https://i.ytimg.com/vi/LfqMgUkQpR0/hqdefault.jpg', tags:'african dancing baby'});
   var unhelpfulTeacher    = new Meme({ title: 'Unhelpful Teacher', image:'http://www.memecreator.org/static/images/templates/8274.jpg', tags:'unhelpful teacher'});
   var mindBlown           = new Meme({ title: 'Mind Blown', image:'http://i0.wp.com/conduit1.com/wp-content/uploads/blank-meme-013-keanue-reeves-mind-blown.jpg?resize=396%2C286', tags:'mind blown'});
@@ -70,9 +70,13 @@ User.remove({})
 
 
 
-  [youDontSay, foreverAlone, badLuckBrian].forEach(function(meme) {
-    joe.memes.push(meme);
-  });
+[ youDontSay, foreverAlone, badLuckBrian, whyUNo, scumbagSteve, noFace, philosoraptor, oneCannotSimply,
+overlyManlyMan, babyGodfather, successKid, josephDucreux, futuramaFry, faceYouMake, yoDawgHeardYou, batmanSlap,
+africanDancingBaby, unhelpfulTeacher, mindBlown, drinkMyOwnPiss, starTrekWtf, thatEscalatedQuickly, youMeanToTellMe,
+grumpyCat, jackieChanWtf, condescendingWonka
+].forEach(function(meme) {
+  joe.memes.push(meme);
+});
 
   return joe.save();
 })

@@ -4,8 +4,8 @@ var mongoose = require('mongoose');
 var MemeSchema = new mongoose.Schema({
   // user: { type: mongoose.Schema.Types.ObjectId, ref : 'User'},
   title: { type: String,  required: true },
-  top: { type: String,  required: true },
-  bottom: { type: String,  required: true },
+  top: { type: String },
+  bottom: { type: String },
   image: { type: String,  required: true },
   tags:  [ { type: String } ],
   },

@@ -31,7 +31,7 @@ router.get('/browse', authenticate, function(req, res, next) {
 });
 
 // INDEX
-router.get('/', authenticate, function(req, res, next) {
+router.get('/index', authenticate, function(req, res, next) {
   var memes = global.currentUser.memes;
   res.render('memes/index', { memes: memes, message: req.flash() });
 console.log(memes);
