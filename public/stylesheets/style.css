@@ -21,9 +21,14 @@ a {
 
 .meme-image {
   margin: 35px;
-  /*align-content: center;*/
 }
-
+#top, #bottom {
+  width:200px;
+  height: 50px;
+  font-family: impact;
+  font-size:14px;
+  font-color: black;
+}
 /*
 <a class="btn btn-default" href="#" role="button">Link</a>
 <button class="btn btn-default" type="submit">Button</button>

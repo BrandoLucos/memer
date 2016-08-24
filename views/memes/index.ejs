@@ -12,14 +12,14 @@
   <main>
     <div>
       <h3 style='background:white'>Memes</h3>
-      <% memes.forEach(function(meme) { %>
         <dl class="dl-horizontal">
-          <h3><span>title</span><%= meme.title %></h3>
-          <dt>genre</dt><dd><%= meme.genre %></dd>
-          <dt>tags</dt><dd><%= meme.tags %></dd>
-          <dt>tags</dt><dd><%= meme.image %><dd>
+          <dd><h3><%= meme.title %></h3></dd>
+          <dd><h5><%= meme.tags %></h5></dd>
+          <dd><img src= "<%= meme.image %>"></dd>
+          <dd><div id ="top"><%= meme.top %></div></dd>
+          <dd><div id="bottom"><%= meme.bottom %></div></dd>
         </dl>
-      <% }); %>
+
 
     </div>
   </main>

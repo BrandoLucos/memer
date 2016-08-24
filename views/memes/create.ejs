@@ -12,15 +12,20 @@
 
   <main>
     <div>
-      <h3></h3><form action="/browse" method="POST">
+      <h3></h3><form action="/browse" method="GET">
       <% memes.forEach(function(meme) { %>
-        <dl class="dl-horizontal">
-          <dt>title</dt><dd><%= meme.title %></dd>
-          <dt>image</dt><dd><%= meme.image %></dd>
-          <dt>top</dt><dd><%= meme.top %></dd>
-          <dt>bottom</dt><dd><%= meme.bottom %></dd>
-          <dt>tags</dt><dd><%= meme.tags %></dd>
-        </dl>
+        <h4>
+          <form method="GET" action="/memes/<%= meme._id %>?_method=DELETE">
+            <a href="/memes/<%= meme._id %>">
+              <%= meme.title + ' - ' + meme.completed %>
+              <img src="<%= meme.image %>">
+              <%= meme.top %>
+              <%= meme.bottom %>
+              <%= meme.tags %>
+            </a>
+            <button type="submit" class="btn btn-xs btn-danger">Delete</button>
+          </form>
+        </h4>
       <% }) %>
       </form>
      <button type="submit">Submit</button>
@@ -32,5 +37,4 @@
   </footer>
 </body>
 </html>
-
 

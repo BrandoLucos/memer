@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var meme = require('../models/memes');
+var Meme = require('../models/memes');
 
 
 function makeError(res, message, status) {
@@ -18,6 +18,14 @@ function authenticate(req, res, next) {
     next();
   }
 }
+router.get('/modify/:id', authenticate, function (req, res, next) {
+  Meme.find({"tags": req.params.id})
+  .then(function (meme) {
+  res.render ('memes/index', {meme : meme});
+   }, function(err) {
+    return next(err)
+  });
+});
 
 router.get('/create', authenticate, function(req, res, next) {
   // get all the memes and render the index view
@@ -31,7 +39,7 @@ router.get('/browse', authenticate, function(req, res, next) {
 });
 
 // INDEX
-router.get('/index', authenticate, function(req, res, next) {
+router.get('/', authenticate, function(req, res, next) {
   var memes = global.currentUser.memes;
   res.render('memes/index', { memes: memes, message: req.flash() });
 console.log(memes);
@@ -41,7 +49,6 @@ console.log(memes);
 router.get('/new', authenticate, function(req, res, next) {
   var meme = {
     title: '',
-    completed: false
   };
   res.render('memes/new', { meme: meme, message: req.flash() });
 });
