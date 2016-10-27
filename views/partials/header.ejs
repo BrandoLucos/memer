@@ -1,8 +1,8 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default" role="navigation" style="background-color:black; font-color: purple;">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <span class="glyphicon glyphicon glyphicon-leaf"></span>Memer
+      <a class="navbar-brand" href="/memes/browse" style="font-size: 30px;">
+       MEMER
       </a>
     </div>
     <ul class="nav navbar-nav navbar-left">
@@ -12,6 +12,7 @@
       <li><a href="/memes">My Memes</a></li>
      <% } %>
     </ul>
+
     <ul class="nav navbar-nav navbar-right">
       <% if (currentUser) { %>
         <li><a href="#"><%= currentUser.local.email %></a></li>

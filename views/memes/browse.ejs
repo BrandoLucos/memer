@@ -5,20 +5,19 @@
 </head>
 
 <body class="container-fluid">
-  <header>
-    <% include ../partials/header %>
-  </header>
+<header>
+  <% include ../partials/header %>
+</header>
 
-  <main>
+<main>
+  <!-- meme browse container -->
     <div class="container">
-        <h1 style="text-align:center;">Click to Make a Meme</h1>
-        <% memes.forEach(function(meme) { %>
-          <a href="/memes/modify/<%= meme.tags[0] %>"><img src="<%= meme.image %>" width="200" alt="Responsive image" class="meme-image img-rounded" role="button" class="btn btn-primary">
-        <% }) %>
-      <!-- <img src="" width="200" alt="Responsive image" class="meme-image img-rounded"> -->
+        <h1 style="text-align:center;">Select a Meme</h1>
+            <% memes.forEach(function(meme) { %>
+            <a href="/memes/modify/<%= meme.tags[0] %>"><img src="<%= meme.image %>" width="200" alt="Responsive image" class="meme-image img-rounded" role="button" class="btn btn-primary"></a>
+            <% }) %>
     </div>
-
-  </main>
+</main>
 
   <footer>
     <% include ../partials/footer %>

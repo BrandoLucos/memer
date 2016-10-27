@@ -40,9 +40,9 @@ User.remove({})
 })
 .then(function(joe) {
   console.log('creating some new memes...');
-  var youDontSay          = new Meme({ title: 'You Dont Say',  image: 'https://ip.bitcointalk.org/?u=https%3A%2F%2Fdl.dropboxusercontent.com%2Fu%2F96353231%2Fmeme%2FreadImage.jpg&t=566&c=jf851N_C5c2zmQ', tags:'youDontSay'});
+  var youDontSay          = new Meme({ title: 'You Dont Say',  image: 'http://ct.fra.bz/ol/fz/sw/i60/5/7/8/frabz-c8d0b1.jpg', tags:'youDontSay'});
   var foreverAlone        = new Meme({ title: 'Forever Alone', image: 'https://imgflip.com/s/meme/Forever-Alone.jpg', tags:'foreverAlone'});
-  var badLuckBrian        = new Meme({ title: 'Bad Luck Brian',  image: 'http://www.comicsandmemes.com/wp-content/uploads/2013/04/bad-luck-brian.png', tags:'badLuckBrian' });
+  var badLuckBrian        = new Meme({ title: 'Bad Luck Brian',  image: 'https://i.imgflip.com/17ffa.jpg', tags:'badLuckBrian' });
   var whyUNo              = new Meme({ title: 'Why U No', image:'http://www.instructables.com/files/deriv/F1M/VUND/GZKG37BW/F1MVUNDGZKG37BW.LARGE.jpg', tags:'whyUNo'});
   var scumbagSteve        = new Meme({ title: 'Scumbag Steve', image:'http://i0.kym-cdn.com/photos/images/newsfeed/000/093/953/c5b.jpg', tags:'scumbagSteve'});
   var noFace              = new Meme({ title: 'NO Face', image:'https://cdn.meme.am/images/300x/7420041.jpg', tags:'noFace'});
